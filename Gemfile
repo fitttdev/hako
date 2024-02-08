@@ -14,15 +14,15 @@ gem 'turbo-rails'
 # gem "redis", ">= 4.0.1"
 # gem "kredis"
 # gem "bcrypt", "~> 3.1.7"
-
-gem 'tzinfo-data', platforms: %i[windows jruby]
-
 gem 'bootsnap', require: false
+gem 'devise', '~> 4.9'
+gem 'tzinfo-data', platforms: %i[windows jruby]
 
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
+  gem 'pry', '~> 0.14.2'
 end
 
 group :development do
@@ -32,7 +32,3 @@ group :development do
   # gem "rack-mini-profiler"
   # gem "spring"
 end
-
-gem 'devise', '~> 4.9'
-
-gem "pry", "~> 0.14.2"
