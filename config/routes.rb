@@ -7,16 +7,14 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get 'up' => 'rails/health#show', as: :rails_health_check
 
-  scope 'api/v1' do
-    devise_for(
-      :users,
-      controllers: {
-        sessions: 'api/v1/sessions',
-        registrations: 'api/v1/registrations',
-        passwords: 'api/v1/passwords',
-        confirmations: 'api/v1/confirmations'
-      },
-      defaults: { format: :json }
-    )
-  end
+  devise_for(
+    :users,
+    controllers: {
+      sessions: 'auth/sessions',
+      registrations: 'auth/registrations',
+      passwords: 'auth/passwords',
+      confirmations: 'auth/confirmations'
+    },
+    defaults: { format: :json }
+  )
 end

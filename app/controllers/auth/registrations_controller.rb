@@ -11,9 +11,15 @@ module Auth
     # end
 
     # POST /resource
-    # def create
-    #   super
-    # end
+    def create
+      build_resource(sign_up_params)
+
+      resource.save
+      render json: {
+        done: resource.save,
+        msg: 'Registration Successful'
+      }
+    end
 
     # GET /resource/edit
     # def edit
