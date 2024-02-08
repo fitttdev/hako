@@ -32,3 +32,5 @@ group :development do
   # gem "rack-mini-profiler"
   # gem "spring"
 end
+
+gem 'devise', '~> 4.9'
