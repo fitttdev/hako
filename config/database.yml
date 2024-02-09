@@ -24,13 +24,13 @@ default: &default
 
 development:
   <<: *default
-  database: railic_development
+  database: relic_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: railic
+  #username: relic
 
   # The password associated with the PostgreSQL role (username).
   #password:
@@ -58,7 +58,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: railic_test
+  database: relic_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: railic_production
-  username: railic
-  password: <%= ENV["RAILIC_DATABASE_PASSWORD"] %>
+  database: relic_production
+  username: relic
+  password: <%= ENV["RELIC_DATABASE_PASSWORD"] %>
