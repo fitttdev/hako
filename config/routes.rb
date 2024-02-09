@@ -11,9 +11,7 @@ Rails.application.routes.draw do
     :users,
     controllers: {
       sessions: 'auth/sessions',
-      registrations: 'auth/registrations',
-      passwords: 'auth/passwords',
-      confirmations: 'auth/confirmations'
+      registrations: 'auth/registrations'
     },
     defaults: { format: :json }
   )
