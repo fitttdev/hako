@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Auth
+module Users
   class RegistrationsController < Devise::RegistrationsController
     # before_action :configure_sign_up_params, only: [:create]
     # before_action :configure_account_update_params, only: [:update]
@@ -10,15 +10,10 @@ module Auth
     #   super
     # end
 
-    def create
-      build_resource(sign_up_params)
-
-      resource.save
-      render json: {
-        done: resource.save,
-        msg: 'Registration Successful'
-      }
-    end
+    # POST /resource
+    # def create
+    #   super
+    # end
 
     # GET /resource/edit
     # def edit
