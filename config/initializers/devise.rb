@@ -8,13 +8,14 @@
 #
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+# rubocop:disable Layout/LineLength
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'd94bac76e2ce618e167d7c7747554bdf7f070caf7dc974355372e245d47c6e64d4fe8d1e02b1038ff210ad8664ae26d8a616b005ead7d4d381d3c817480a3e50'
+  # config.secret_key = 'd81f2e910216421c5aa64c70e13929d5f2156460bb27560135abe8e884de6647017c424a0e80f4f6db1d1f935bb2572e34c737d8218202836f2666b664723f44'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +127,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'c76c5d448c8c4f1fb9314c6262bf6b0ccb60f5d5991a303d131c46382e6d10e6a266ee02c92bffc89b3810f2ed414b7185708043da8c343a6c79f97916b44119'
+  # config.pepper = 'e5d552416a3c8fd3eeec35a30379c442b95fef1ebb230a6d2e0beaebc34bcbe564c3018d2bcecbb977de2c51edc73e07737e7058ddf0b48bc961bf063dc047ba'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -263,7 +264,14 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.navigational_formats = []
+
+  config.jwt do |jwt|
+    jwt.secret = ENV.fetch('DEVISE_JWT_SECRET_KEY', nil)
+    jwt.dispatch_requests = [['POST', %r{^/users/sign_in$}]]
+    jwt.revocation_requests = [['DELETE', %r{^/users/sign_out$}]]
+    jwt.expiration_time = 30.minutes.to_i
+  end
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
@@ -311,3 +319,4 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 end
+# rubocop:enable Layout/LineLength
