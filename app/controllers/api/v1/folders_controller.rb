@@ -9,7 +9,6 @@ module Api
       def index
         render json: {
           status: :ok,
-          message: '/api/v1/folders retrieved successfully',
           data: Folder.all
         }
       end
@@ -18,7 +17,6 @@ module Api
       def show
         render json: {
           status: :ok,
-          message: 'Folder retrieved successfully',
           data: @folder
         }
       end
@@ -31,13 +29,11 @@ module Api
         if folder.save
           render json: {
             status: :ok,
-            message: 'Folder created successfully',
             data: folder
           }
         else
           render json: {
             status: :unprocessable_entity,
-            message: 'Failed to create folder',
             errors: folder.errors.full_messages
           }
         end
@@ -48,13 +44,11 @@ module Api
         if @folder.update(folder_params)
           render json: {
             status: :ok,
-            message: 'Folder updated successfully',
             data: @folder
           }
         else
           render json: {
             status: :unprocessable_entity,
-            message: 'Failed to update folder',
             errors: @folder.errors.full_messages
           }
         end
@@ -64,8 +58,7 @@ module Api
       def destroy
         @folder.destroy
         render json: {
-          status: :ok,
-          message: 'Folder deleted successfully'
+          status: :ok
         }
       end
 
