@@ -15,10 +15,7 @@ module Api
           )
         end
 
-        render json: {
-          status: :ok,
-          data: root
-        }
+        render json: { status: :ok, data: root }
       end
     end
   end

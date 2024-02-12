@@ -21,12 +21,14 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
   gem 'bullet'
+  gem 'factory_bot'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'guard-rspec', require: false
   gem 'letter_opener'
   gem 'pry'
   gem 'rb-readline'
+  gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
@@ -38,7 +40,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'web-console'
   # gem "rack-mini-profiler"
