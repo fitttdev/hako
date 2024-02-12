@@ -12,6 +12,7 @@ gem 'puma', '>= 5.0'
 gem 'rack-cors'
 gem 'rails', '~> 7.1.3'
 gem 'tzinfo-data', platforms: %i[windows jruby]
+
 # gem "jbuilder"
 # gem "redis", ">= 4.0.1"
 # gem "kredis"
@@ -19,6 +20,7 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'annotate', '~> 3.2'
   gem 'debug', platforms: %i[mri windows]
   gem 'pry'
 end
