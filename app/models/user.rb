@@ -15,4 +15,6 @@ class User < ApplicationRecord
     :jwt_authenticatable,
     jwt_revocation_strategy: self
   )
+
+  has_many :folders, class_name: 'Folder', dependent: :destroy
 end

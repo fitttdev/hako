@@ -11,4 +11,11 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+
+  namespace :api do
+    namespace :v1  do
+      resources :folders
+      get '/root' => 'roots#show'
+    end
+  end
 end
