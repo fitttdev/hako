@@ -6,6 +6,7 @@ ruby '3.2.2'
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
 gem 'devise-jwt', '~> 0.11.0'
+gem 'dotenv-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rack-cors'
