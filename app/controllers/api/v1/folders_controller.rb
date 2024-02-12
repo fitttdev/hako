@@ -7,18 +7,12 @@ module Api
 
       # GET /api/v1/folders
       def index
-        render json: {
-          status: :ok,
-          data: Folder.all
-        }
+        render json: { status: :ok, data: Folder.all }
       end
 
       # GET /api/v1/folders/:id
       def show
-        render json: {
-          status: :ok,
-          data: @folder
-        }
+        render json: { status: :ok, data: @folder }
       end
 
       # POST /api/v1/folders
@@ -27,10 +21,7 @@ module Api
         folder.user = User.first
 
         if folder.save
-          render json: {
-            status: :ok,
-            data: folder
-          }
+          render json: { status: :ok, data: folder }
         else
           render json: {
             status: :unprocessable_entity,
@@ -42,10 +33,7 @@ module Api
       # PATCH/PUT /api/v1/folders/:id
       def update
         if @folder.update(folder_params)
-          render json: {
-            status: :ok,
-            data: @folder
-          }
+          render json: { status: :ok, data: @folder }
         else
           render json: {
             status: :unprocessable_entity,
@@ -57,9 +45,7 @@ module Api
       # DELETE /api/v1/folders/:id
       def destroy
         @folder.destroy
-        render json: {
-          status: :ok
-        }
+        render json: { status: :ok }
       end
 
       private
