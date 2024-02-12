@@ -3,6 +3,7 @@ require:
   - rubocop-rspec
   - rubocop-rails
   - rubocop-rake
+  - rubocop-factory_bot
 AllCops:
   NewCops: enable
 Style/Documentation:
