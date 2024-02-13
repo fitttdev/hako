@@ -10,3 +10,11 @@ Style/Documentation:
   Enabled: false
 Metrics/MethodLength:
   Max: 100
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/FilePath:
+  Enabled: false
+RSpec/SpecFilePathFormat:
+  Enabled: false
